@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FC767BA-D684-46CF-82CA-BA75EE7BBE23}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>p3</RootNamespace>
+    <AssemblyName>p3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\Downloads\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuyInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuyInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Company.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Company.Designer.cs">
+      <DependentUpon>Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Party.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Party.Designer.cs">
+      <DependentUpon>Party.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Classes\MainFunction.cs" />
+    <Compile Include="PartyData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PartyData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProductData.cs">
+      <DependentUpon>ProductData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProductData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaleDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tmpDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tmpDetail.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FORMS\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Company.resx">
+      <DependentUpon>Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Party.resx">
+      <DependentUpon>Party.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="BuyInfo.xsc">
+      <DependentUpon>BuyInfo.xsd</DependentUpon>
+    </None>
+    <None Include="BuyInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BuyInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BuyInfo.xss">
+      <DependentUpon>BuyInfo.xsd</DependentUpon>
+    </None>
+    <None Include="CategoryData.xsc">
+      <DependentUpon>CategoryData.xsd</DependentUpon>
+    </None>
+    <None Include="CategoryData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoryData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CategoryData.xss">
+      <DependentUpon>CategoryData.xsd</DependentUpon>
+    </None>
+    <None Include="CompanyData.xsc">
+      <DependentUpon>CompanyData.xsd</DependentUpon>
+    </None>
+    <None Include="CompanyData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CompanyData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CompanyData.xss">
+      <DependentUpon>CompanyData.xsd</DependentUpon>
+    </None>
+    <None Include="PartyData.xsc">
+      <DependentUpon>PartyData.xsd</DependentUpon>
+    </None>
+    <None Include="PartyData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PartyData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PartyData.xss">
+      <DependentUpon>PartyData.xsd</DependentUpon>
+    </None>
+    <None Include="PD.xsc">
+      <DependentUpon>PD.xsd</DependentUpon>
+    </None>
+    <None Include="PD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PD.xss">
+      <DependentUpon>PD.xsd</DependentUpon>
+    </None>
+    <None Include="ProductData.xsc">
+      <DependentUpon>ProductData.xsd</DependentUpon>
+    </None>
+    <None Include="ProductData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductData.xss">
+      <DependentUpon>ProductData.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SaleDetail.xsc">
+      <DependentUpon>SaleDetail.xsd</DependentUpon>
+    </None>
+    <None Include="SaleDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SaleDetail.xss">
+      <DependentUpon>SaleDetail.xsd</DependentUpon>
+    </None>
+    <None Include="tmpDetail.xsc">
+      <DependentUpon>tmpDetail.xsd</DependentUpon>
+    </None>
+    <None Include="tmpDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tmpDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tmpDetail.xss">
+      <DependentUpon>tmpDetail.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PurchaseDetail.xsc">
+      <DependentUpon>PurchaseDetail.xsd</DependentUpon>
+    </None>
+    <None Include="PurchaseDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PurchaseDetail.xss">
+      <DependentUpon>PurchaseDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\product-management-word-cloud-260nw-305892512.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Table\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '17.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+</Project>
